@@ -220,7 +220,6 @@ def build_inputs(wb):
     # ── Key Ratios
     section(ws, r, 1, "KEY RATIOS (FY 2024-25)", span=3); r += 1
     RATIO_ROWS = {}
-    RATIO_ROWS = {}
     ratio_data = [
         ("Return on Equity (ROE) %",       0.2015, FMT_PCT),
         ("Return on Assets (ROA) %",       0.0198, FMT_PCT),
@@ -1531,8 +1530,8 @@ def main():
 
     wb.active = ws_dash
 
-    out = ("/home/runner/work/IDBI-Bank-Financial-Model/"
-           "IDBI-Bank-Financial-Model/IDBI_Bank_Financial_Model.xlsx")
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "IDBI_Bank_Financial_Model.xlsx")
     wb.save(out)
     size = os.path.getsize(out)
     print(f"\n✅  Model saved → {out}")
